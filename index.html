@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>शास्त्री कक्षा </title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">📚 शास्त्री पोर्टल</div>
+    <div class="nav-links">
+      <a href="index.html" class="active">गृहपृष्ठ</a>
+      <a href="#notice">सूचना पाटी</a>
+      <a href="#exam">परीक्षा तालिका</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Theme Toggle">🌙</button>
+      <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="विषय खोज्नुस्..." oninput="searchSubject()" />
+        <span>🔍</span>
+      </div>
+      <select class="lang-toggle" onchange="toggleLang(this.value)">
+        <option value="ne">नेपाली</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title" data-ne="शास्त्री कक्षा पोर्टल" data-en="Shastri Class Portal">शास्त्री कक्षा पोर्टल</h1>
+      <p class="hero-sub" data-ne="ज्ञान, विद्या र संस्कारको पथ" data-en="Path of Knowledge, Learning & Culture">ज्ञान, विद्या र संस्कारको पथ</p>
+    </div>
+    <div class="mandala-bg"></div>
+  </header>
+
+  <!-- YEAR CARDS -->
+  <main class="main-container">
+    <h2 class="section-title" data-ne="वर्ष चयन गर्नुस्" data-en="Select Your Year">वर्ष चयन गर्नुस्</h2>
+    <div class="year-grid" id="yearGrid">
+      <a href="year1/subjects.html" class="year-card" data-aos>
+        <div class="year-icon">𝐈</div>
+        <h3 data-ne="पहिलो वर्ष" data-en="First Year">पहिलो वर्ष</h3>
+        <p data-ne="प्रथम वर्षका सबै विषयहरू" data-en="All subjects of First Year">प्रथम वर्षका सबै विषयहरू</p>
+        <span class="arrow">→</span>
+      </a>
+      <a href="year2/subjects.html" class="year-card" data-aos>
+        <div class="year-icon">𝐈𝐈</div>
+        <h3 data-ne="दोस्रो वर्ष" data-en="Second Year">दोस्रो वर्ष</h3>
+        <p data-ne="द्वितीय वर्षका सबै विषयहरू" data-en="All subjects of Second Year">द्वितीय वर्षका सबै विषयहरू</p>
+        <span class="arrow">→</span>
+      </a>
+      <a href="year3/subjects.html" class="year-card" data-aos>
+        <div class="year-icon">𝐈𝐈𝐈</div>
+        <h3 data-ne="तेस्रो वर्ष" data-en="Third Year">तेस्रो वर्ष</h3>
+        <p data-ne="तृतीय वर्षका सबै विषयहरू" data-en="All subjects of Third Year">तृतीय वर्षका सबै विषयहरू</p>
+        <span class="arrow">→</span>
+      </a>
+      <a href="year4/subjects.html" class="year-card" data-aos>
+        <div class="year-icon">𝐈𝐕</div>
+        <h3 data-ne="चौथो वर्ष" data-en="Fourth Year">चौथो वर्ष</h3>
+        <p data-ne="चतुर्थ वर्षका सबै विषयहरू" data-en="All subjects of Fourth Year">चतुर्थ वर्षका सबै विषयहरू</p>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <!-- NOTICE BOARD -->
+    <section class="notice-section" id="notice">
+      <h2 class="section-title" data-ne="सूचना पाटी 🔔" data-en="Notice Board 🔔">सूचना पाटी 🔔</h2>
+      <div class="notice-board">
+        <div class="notice-item new">
+          <span class="badge">नयाँ</span>
+          <p>प्रथम वर्षको परीक्षा फारम भर्न सुरु भएको छ।</p>
+          <span class="date">२०८१ चैत्र ५</span>
+        </div>
+        <div class="notice-item">
+          <p>व्याकरण कक्षा बिहीवार बाट सुरु हुन्छ।</p>
+          <span class="date">२०८१ फाल्गुन २०</span>
+        </div>
+        <div class="notice-item">
+          <p>सबै विद्यार्थीले पुस्तक लिन आउनुहोस्।</p>
+          <span class="date">२०८१ फाल्गुन १५</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXAM ROUTINE -->
+    <section class="exam-section" id="exam">
+      <h2 class="section-title" data-ne="परीक्षा तालिका 📅" data-en="Exam Routine 📅">परीक्षा तालिका 📅</h2>
+      <div class="table-wrap">
+        <table class="exam-table">
+          <thead>
+            <tr>
+              <th>मिति</th>
+              <th>विषय</th>
+              <th>समय</th>
+              <th>वर्ष</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>२०८१ चैत्र १०</td><td>नेपाली (अनिवार्य)</td><td>बिहान ७:०० – १०:००</td><td>प्रथम</td></tr>
+            <tr><td>२०८१ चैत्र १२</td><td>English (Compulsory)</td><td>बिहान ७:०० – १०:००</td><td>प्रथम</td></tr>
+            <tr><td>२०८१ चैत्र १४</td><td>व्याकरण १</td><td>बिहान ७:०० – १०:००</td><td>प्रथम</td></tr>
+            <tr><td>२०८१ चैत्र १६</td><td>ज्योतिष १</td><td>बिहान ७:०० – १०:००</td><td>प्रथम</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PROGRESS TRACKER -->
+    <section class="progress-section">
+      <h2 class="section-title" data-ne="मेरो प्रगति 📊" data-en="My Progress 📊">मेरो प्रगति 📊</h2>
+      <div class="progress-grid">
+        <div class="progress-item">
+          <span>नेपाली</span>
+          <div class="progress-bar"><div class="progress-fill" style="width:70%">70%</div></div>
+        </div>
+        <div class="progress-item">
+          <span>English</span>
+          <div class="progress-bar"><div class="progress-fill" style="width:50%">50%</div></div>
+        </div>
+        <div class="progress-item">
+          <span>व्याकरण</span>
+          <div class="progress-bar"><div class="progress-fill" style="width:40%">40%</div></div>
+        </div>
+        <div class="progress-item">
+          <span>ज्योतिष</span>
+          <div class="progress-bar"><div class="progress-fill" style="width:30%">30%</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© २०८१ शास्त्री कक्षा पोर्टल | सर्वे भवन्तु सुखिनः</p>
+  </footer>
+
+  <!-- SEARCH RESULT OVERLAY -->
+  <div class="search-overlay" id="searchOverlay" style="display:none;">
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

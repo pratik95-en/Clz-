@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>व्याकरण १ – प्रथम वर्ष</title>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="stylesheet" href="notes.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">📚 शास्त्री पोर्टल</div>
+    <div class="nav-links">
+      <a href="../../index.html">🏠 गृहपृष्ठ</a>
+      <a href="../subjects.html">← प्रथम वर्ष</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+      <button class="print-btn" onclick="window.print()">🖨️ Print</button>
+    </div>
+  </nav>
+  <header class="notes-hero">
+    <div class="breadcrumb">प्रथम वर्ष → व्याकरण → पेपर १</div>
+    <h1>व्याकरण १</h1>
+    <p>Vyākāraṇa — Paper 1 — First Year</p>
+  </header>
+  <main class="notes-container">
+    <div class="chapter-progress">
+      <h3>अध्याय प्रगति</h3>
+      <div class="chapters-list" id="chapterList">
+        <label class="chapter-check"><input type="checkbox" onchange="updateProgress()" /> अध्याय १: संज्ञा र सर्वनाम</label>
+        <label class="chapter-check"><input type="checkbox" onchange="updateProgress()" /> अध्याय २: विशेषण र क्रिया</label>
+        <label class="chapter-check"><input type="checkbox" onchange="updateProgress()" /> अध्याय ३: अव्यय</label>
+        <label class="chapter-check"><input type="checkbox" onchange="updateProgress()" /> अध्याय ४: वाक्य संरचना</label>
+        <label class="chapter-check"><input type="checkbox" onchange="updateProgress()" /> अध्याय ५: विभक्ति प्रकरण</label>
+      </div>
+      <div class="progress-bar" style="margin-top:0.8rem;">
+        <div class="progress-fill" id="chapterProgress" style="width:0%">0%</div>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('notes')">📝 Notes</button>
+      <button class="tab" onclick="showTab('pdf')">📄 PDF</button>
+      <button class="tab" onclick="showTab('video')">🎥 Video</button>
+      <button class="tab" onclick="showTab('question')">❓ Questions</button>
+    </div>
+    <div class="tab-content active" id="tab-notes">
+      <div class="note-card">
+        <h2>संज्ञा र सर्वनाम</h2>
+        <p>संज्ञा भनेको कुनै व्यक्ति, वस्तु, स्थान वा भावको नाम हो। सर्वनाम संज्ञाको ठाउँमा प्रयोग हुने शब्द हो।</p>
+        <div class="key-points">
+          <h4>मुख्य बिन्दुहरू / Key Points:</h4>
+          <ul>
+            <li>संज्ञाका प्रकार: व्यक्तिवाचक, जातिवाचक, भाववाचक</li>
+            <li>सर्वनामका प्रकार</li>
+            <li>विभक्तिका चिह्नहरू</li>
+            <li>वाक्यमा संज्ञाको भूमिका</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-pdf">
+      <div class="upload-box">
+        <div class="upload-icon">📁</div>
+        <h3>PDF थप्नुस्</h3>
+        <p>PDF फाइल यहाँ drag & drop गर्नुस् वा छान्नुस्</p>
+        <input type="file" accept=".pdf" id="pdfInput" onchange="showPDF(this)" style="display:none"/>
+        <button class="upload-btn" onclick="document.getElementById('pdfInput').click()">PDF छान्नुस्</button>
+      </div>
+      <div class="pdf-links">
+        <h3>उपलब्ध PDF हरू</h3>
+        <div class="pdf-item"><span>📄 व्याकरण १ – पाठ्यक्रम</span><a href="#" class="pdf-dl-btn">Download</a></div>
+        <div class="pdf-item"><span>📄 व्याकरण नोटस भाग १</span><a href="#" class="pdf-dl-btn">Download</a></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-video">
+      <div class="video-list">
+        <h3>📺 भिडियो लेक्चर</h3>
+        <div class="video-item"><div class="video-thumb">▶</div><div><strong>संज्ञा र सर्वनाम</strong><p>YouTube लिंक थप्नुस्</p><input type="text" placeholder="YouTube URL यहाँ राख्नुस्" class="url-input"/></div></div>
+        <div class="video-item"><div class="video-thumb">▶</div><div><strong>विभक्ति प्रकरण</strong><p>YouTube लिंक थप्नुस्</p><input type="text" placeholder="YouTube URL यहाँ राख्नुस्" class="url-input"/></div></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-question">
+      <div class="note-card">
+        <h3>महत्त्वपूर्ण प्रश्नहरू</h3>
+        <ol class="question-list">
+          <li>संज्ञाको परिभाषा दिई यसका प्रकारहरू लेख्नुस्।</li>
+          <li>सर्वनामका भेदहरू उदाहरण सहित लेख्नुस्।</li>
+          <li>विभक्तिका प्रकारहरू उल्लेख गर्नुस्।</li>
+          <li>निम्न वाक्यमा संज्ञा र सर्वनाम छुट्याउनुस्।</li>
+          <li>अव्ययका प्रकारहरू सोदाहरण लेख्नुस्।</li>
+        </ol>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>© २०८१ शास्त्री कक्षा पोर्टल | व्याकरण १ – प्रथम वर्ष</p>
+  </footer>
+  <script src="../../script.js"></script>
+  <script src="notes.js"></script>
+</body>
+                                                                                                                           </html>

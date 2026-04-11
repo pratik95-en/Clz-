@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>व्याकरण २ – प्रथम वर्ष</title>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="stylesheet" href="notes.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">📚 शास्त्री पोर्टल</div>
+    <div class="nav-links">
+      <a href="../../index.html">🏠 गृहपृष्ठ</a>
+      <a href="../subjects.html">← प्रथम वर्ष</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+      <button class="print-btn" onclick="window.print()">🖨️ Print</button>
+    </div>
+  </nav>
+  <header class="notes-hero">
+    <div class="breadcrumb">प्रथम वर्ष → व्याकरण → पेपर २</div>
+    <h1>व्याकरण २</h1>
+    <p>Vyākāraṇa — Paper 2 — First Year</p>
+  </header>
+  <main class="notes-container">
+    <div class="chapter-progress">
+      <h3>अध्याय प्रगति</h3>
+      <div class="chapters-list" id="chapterList">
+        <label class="chapter-check"><input type="checkbox" onchange="updateProgress()" /> अध्याय १: क्रियाका प्रकार</label>
+        <label class="chapter-check"><input type="checkbox" onchange="updateProgress()" /> अध्याय २: काल र पक्ष</label>
+        <label class="chapter-check"><input type="checkbox" onchange="updateProgress()" /> अध्याय ३: वाच्य</label>
+        <label class="chapter-check"><input type="checkbox" onchange="updateProgress()" /> अध्याय ४: समास</label>
+        <label class="chapter-check"><input type="checkbox" onchange="updateProgress()" /> अध्याय ५: सन्धि</label>
+      </div>
+      <div class="progress-bar" style="margin-top:0.8rem;">
+        <div class="progress-fill" id="chapterProgress" style="width:0%">0%</div>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('notes')">📝 Notes</button>
+      <button class="tab" onclick="showTab('pdf')">📄 PDF</button>
+      <button class="tab" onclick="showTab('video')">🎥 Video</button>
+      <button class="tab" onclick="showTab('question')">❓ Questions</button>
+    </div>
+    <div class="tab-content active" id="tab-notes">
+      <div class="note-card">
+        <h2>क्रियाका प्रकार</h2>
+        <p>क्रिया भनेको वाक्यमा कार्य वा अवस्था बताउने शब्द हो। नेपाली व्याकरणमा क्रियाका विभिन्न प्रकारहरू छन्।</p>
+        <div class="key-points">
+          <h4>मुख्य बिन्दुहरू / Key Points:</h4>
+          <ul>
+            <li>सकर्मक र अकर्मक क्रिया</li>
+            <li>कालका प्रकार: वर्तमान, भूत, भविष्य</li>
+            <li>वाच्यका प्रकार: कर्तृवाच्य, कर्मवाच्य</li>
+            <li>समास र सन्धिका नियमहरू</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-pdf">
+      <div class="upload-box">
+        <div class="upload-icon">📁</div>
+        <h3>PDF थप्नुस्</h3>
+        <p>PDF फाइल यहाँ drag & drop गर्नुस् वा छान्नुस्</p>
+        <input type="file" accept=".pdf" id="pdfInput" onchange="showPDF(this)" style="display:none"/>
+        <button class="upload-btn" onclick="document.getElementById('pdfInput').click()">PDF छान्नुस्</button>
+      </div>
+      <div class="pdf-links">
+        <h3>उपलब्ध PDF हरू</h3>
+        <div class="pdf-item"><span>📄 व्याकरण २ – पाठ्यक्रम</span><a href="#" class="pdf-dl-btn">Download</a></div>
+        <div class="pdf-item"><span>📄 व्याकरण नोटस भाग २</span><a href="#" class="pdf-dl-btn">Download</a></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-video">
+      <div class="video-list">
+        <h3>📺 भिडियो लेक्चर</h3>
+        <div class="video-item"><div class="video-thumb">▶</div><div><strong>क्रिया र काल</strong><p>YouTube लिंक थप्नुस्</p><input type="text" placeholder="YouTube URL यहाँ राख्नुस्" class="url-input"/></div></div>
+        <div class="video-item"><div class="video-thumb">▶</div><div><strong>समास र सन्धि</strong><p>YouTube लिंक थप्नुस्</p><input type="text" placeholder="YouTube URL यहाँ राख्नुस्" class="url-input"/></div></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-question">
+      <div class="note-card">
+        <h3>महत्त्वपूर्ण प्रश्नहरू</h3>
+        <ol class="question-list">
+          <li>सकर्मक र अकर्मक क्रियामा के फरक छ?</li>
+          <li>कालका प्रकारहरू उल्लेख गर्नुस्।</li>
+          <li>वाच्यका प्रकारहरू सोदाहरण व्याख्या गर्नुस्।</li>
+          <li>समासको परिभाषा दिई यसका भेदहरू लेख्नुस्।</li>
+          <li>सन्धिका नियमहरू उदाहरण सहित उल्लेख गर्नुस्।</li>
+        </ol>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>© २०८१ शास्त्री कक्षा पोर्टल | व्याकरण २ – प्रथम वर्ष</p>
+  </footer>
+  <script src="../../script.js"></script>
+  <script src="notes.js"></script>
+</body>
+</html>
